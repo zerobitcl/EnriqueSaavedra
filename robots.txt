@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://consilio.cl/sitemap.xml

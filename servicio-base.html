@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: Personalizar meta por servicio -->
+  <meta name="description" content="Asesoría legal especializada en Derecho Laboral para empresas en Chile. Contratos, despidos, compliance y litigios laborales. Consilio Estudio Jurídico, Viña del Mar.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Enrique Saavedra — Consilio Estudio Jurídico">
+
+  <!-- TODO: Personalizar title con keyword principal -->
+  <title>Abogado Especialista en Derecho Laboral en Chile | Consilio</title>
+
+  <!-- TODO: Actualizar URL canónica al publicar cada servicio -->
+  <link rel="canonical" href="https://consilio.cl/servicios/derecho-laboral">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abogado Especialista en Derecho Laboral | Consilio">
+  <meta property="og:description" content="Defensa y asesoría laboral estratégica para empresas y trabajadores en Chile.">
+  <meta property="og:locale" content="es_CL">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- TODO: Actualizar preguntas y respuestas al clonar -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo debe una empresa consultar a un abogado laboral?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ante despidos, fiscalizaciones de la Dirección del Trabajo, conflictos colectivos, redacción de contratos o cuando exista riesgo de demanda por vulneración de derechos laborales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye una asesoría en Derecho Laboral de Consilio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Auditoría de contratos y reglamentos internos, representación en mediaciones y juicios laborales, protocolos de terminación de relación laboral y prevención de contingencias legales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Atienden casos laborales fuera de Viña del Mar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Consilio presta asesoría laboral a clientes en todo Chile, de forma presencial y remota, con respuesta ágil vía WhatsApp y reuniones virtuales."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Utilidades temporales — mover a styles.css -->
+  <style>
+    .hero-service {
+      min-height: 45vh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--header-h) + var(--space-lg));
+      padding-bottom: var(--space-lg);
+    }
+
+    .hero-service__inner {
+      max-width: 48rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-sm);
+    }
+
+    .breadcrumb a {
+      color: var(--color-gold);
+      transition: color var(--transition);
+    }
+
+    .breadcrumb a:hover,
+    .breadcrumb a:focus-visible {
+      color: var(--color-gold-light);
+    }
+
+    .breadcrumb__sep {
+      color: rgba(168, 159, 148, 0.5);
+    }
+
+    .breadcrumb [aria-current="page"] {
+      color: var(--color-text-muted);
+    }
+
+    .contenido-seo {
+      padding-block: var(--space-xl);
+    }
+
+    .contenido-seo__inner {
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .contenido-seo__inner > p {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .contenido-seo__inner > h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: var(--space-md);
+    }
+
+    .contenido-seo__inner > h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-sm);
+    }
+
+    .service-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      margin: var(--space-lg) 0;
+    }
+
+    .service-benefits li {
+      position: relative;
+      padding-left: 1.75rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .service-benefits li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.625rem;
+      height: 0.375rem;
+      border-left: 2px solid var(--color-gold);
+      border-bottom: 2px solid var(--color-gold);
+      transform: rotate(-45deg);
+    }
+
+    .faq-section {
+      padding-block: var(--space-xl);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .faq-item {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      font-family: var(--font-serif);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      padding: var(--space-md);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-gold);
+      flex-shrink: 0;
+      transition: transform var(--transition);
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__answer {
+      padding: 0 var(--space-md) var(--space-md);
+      color: var(--color-text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .urgencia-section {
+      padding-bottom: var(--space-xl);
+    }
+
+    .urgencia-section .urgency-banner {
+      max-width: 42rem;
+      margin-inline: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#hero-service" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Consilio — Estudio Jurídico, inicio">
+        <svg class="logo__icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M10 26V10h4.5c3.2 0 5.5 2 5.5 5.2 0 2.8-1.6 4.5-4 5l5.5 5.8h-3.8l-5-5.3H13v5.3H10zm3-8.2h1.4c1.8 0 2.8-.9 2.8-2.3S16.2 13 14.4 13H13v4.8z" fill="currentColor"/>
+        </svg>
+        <span class="logo__text">Consilio</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="index.html#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="index.html#perfil" class="nav__link">Perfil</a></li>
+          <li><a href="index.html#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/56958737727?text=Hola,%20necesito%20asesor%C3%ADa%20legal%20en%20ciberseguridad%20y%20datos." class="btn btn--primary btn--sm header__cta" target="_blank" rel="noopener noreferrer">
+        Consulta Rápida
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="hero-service" class="hero-service section--dark">
+      <div class="container hero-service__inner">
+        <!-- TODO: Actualizar breadcrumb por servicio -->
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <a href="index.html#servicios">Servicios</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span aria-current="page">Derecho Laboral</span>
+        </nav>
+
+        <!-- TODO: H1 con keyword principal del servicio -->
+        <h1 class="hero__title">Abogado Especialista en Derecho Laboral en Chile</h1>
+
+        <!-- TODO: Subtítulo persuasivo del servicio -->
+        <p class="hero__subtitle">Proteja su empresa ante contingencias laborales con asesoría preventiva, defensa en juicios y compliance ante la Dirección del Trabajo.</p>
+
+        <div class="hero__actions">
+          <a href="https://wa.me/56958737727?text=Hola,%20necesito%20asesor%C3%ADa%20legal%20en%20ciberseguridad%20y%20datos." class="btn btn--primary btn--lg btn--wa-pulse" target="_blank" rel="noopener noreferrer">
+            <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <article id="contenido-seo" class="contenido-seo section">
+      <div class="container contenido-seo__inner">
+        <!-- TODO: Contenido SEO long-form — duplicar bloques según necesidad -->
+        <h2>Asesoría laboral estratégica para empresas que exigen precisión legal</h2>
+
+        <p>El <strong>Derecho Laboral</strong> en Chile exige que las empresas gestionen con rigor cada etapa de la relación laboral: desde la contratación hasta la terminación del vínculo. Un error en un finiquito, reglamento interno o procedimiento disciplinario puede derivar en demandas costosas y daño reputacional.</p>
+
+        <p>En <strong>Consilio Estudio Jurídico</strong> acompañamos a empresas de todos los tamaños con un enfoque preventivo y litigioso cuando la situación lo requiere. Nuestro objetivo es reducir la exposición legal de su organización y resolver conflictos con criterio estratégico.</p>
+
+        <h3>¿Qué cubre nuestra asesoría en Derecho Laboral?</h3>
+
+        <ul class="service-benefits">
+          <li>Redacción y revisión de contratos de trabajo, anexos y cláusulas especiales</li>
+          <li>Protocolos de despido, mutuo acuerdo y procedimientos disciplinarios</li>
+          <li>Defensa en juicios laborales, mediaciones y procedimientos de la Dirección del Trabajo</li>
+          <li>Auditoría de reglamentos internos, jornadas, horas extras y subcontratación</li>
+          <li>Asesoría en negociaciones colectivas y relaciones sindicales</li>
+        </ul>
+
+        <p>Si su empresa enfrenta una fiscalización, un despido complejo o necesita estructurar sus procesos laborales desde cero, contáctenos. Ofrecemos respuesta ágil y confidencialidad absoluta bajo el secreto profesional.</p>
+      </div>
+    </article>
+
+    <section id="faq-schema" class="faq-section section section--dark">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <span class="section__eyebrow">FAQ</span>
+          <h2 class="section__title">Preguntas Frecuentes</h2>
+          <p class="section__lead">Respuestas claras sobre nuestro servicio de Derecho Laboral.</p>
+        </div>
+
+        <!-- TODO: Sincronizar preguntas con JSON-LD del head -->
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>¿Cuándo debe una empresa consultar a un abogado laboral?</summary>
+            <p class="faq-item__answer">Ante despidos, fiscalizaciones de la Dirección del Trabajo, conflictos colectivos, redacción de contratos o cuando exista riesgo de demanda por vulneración de derechos laborales.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué incluye una asesoría en Derecho Laboral de Consilio?</summary>
+            <p class="faq-item__answer">Auditoría de contratos y reglamentos internos, representación en mediaciones y juicios laborales, protocolos de terminación de relación laboral y prevención de contingencias legales.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Atienden casos laborales fuera de Viña del Mar?</summary>
+            <p class="faq-item__answer">Sí. Consilio presta asesoría laboral a clientes en todo Chile, de forma presencial y remota, con respuesta ágil vía WhatsApp y reuniones virtuales.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="urgencia" class="urgencia-section section">
+      <div class="container">
+        <div class="urgency-banner">
+          <div class="urgency-banner__icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M12 8v4M12 16h.01"/>
+            </svg>
+          </div>
+          <h3 class="urgency-banner__title">¿Sufrió una vulneración o necesita blindar su empresa?</h3>
+          <p class="urgency-banner__text">Cada minuto cuenta ante un incidente digital. Obtenga orientación legal inmediata con total confidencialidad profesional y secreto abogado-cliente.</p>
+          <ul class="urgency-banner__trust">
+            <li>Respuesta en minutos</li>
+            <li>100% confidencial</li>
+            <li>Especialista certificado</li>
+          </ul>
+          <a href="https://wa.me/56958737727?text=Hola,%20necesito%20asesor%C3%ADa%20legal%20en%20ciberseguridad%20y%20datos." class="btn btn--primary btn--xl btn--wa-pulse btn--full" target="_blank" rel="noopener noreferrer">
+            <svg class="btn__icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Solicitar Asesoría Confidencial Inmediata
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__text">Consilio</span>
+        <p class="footer__tagline">Estudio Jurídico — Ciberseguridad &amp; Derecho Digital</p>
+      </div>
+      <p class="footer__copy">&copy; <span id="year"></span> Consilio. Todos los derechos reservados. Enrique Saavedra, Abogado.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
