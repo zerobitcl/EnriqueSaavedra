@@ -309,9 +309,17 @@ strong {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  color: var(--color-gold);
   flex-shrink: 0;
+  line-height: 0;
+}
+
+.logo__img {
+  height: 2.75rem;
+  width: auto;
+  max-width: 7.5rem;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
 }
 
 .logo__text {
@@ -923,6 +931,15 @@ strong {
   font-size: 1.25rem;
 }
 
+.footer__logo {
+  height: 3.25rem;
+  width: auto;
+  max-width: 8.75rem;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
 .footer__tagline {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
@@ -954,6 +971,11 @@ strong {
 
   .header__cta {
     display: inline-flex;
+  }
+
+  .logo__img {
+    height: 3rem;
+    max-width: 8rem;
   }
 
   .hero__inner {
