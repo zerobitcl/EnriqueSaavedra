@@ -11,33 +11,18 @@
   RewriteCond %{HTTP_HOST} ^www\.consilio\.cl [NC]
   RewriteRule ^ https://consilio.cl%{REQUEST_URI} [L,R=301]
 
-  # --- URLs limpias (no requiere carpeta física /servicios/) ---
+  # URLs "limpias" antiguas (404 en producción) → URLs reales indexables
+  RewriteRule ^enrique-saavedra/?$ / [R=301,L]
+  RewriteRule ^servicios/asesoria-legal-empresas/?$ /asesoria-legal-empresas.html [R=301,L]
+  RewriteRule ^servicios/contratacion-comercial/?$ /contratacion-comercial.html [R=301,L]
+  RewriteRule ^servicios/gestion-de-riesgos/?$ /gestion-de-riesgos.html [R=301,L]
+  RewriteRule ^servicios/negociacion-comercial/?$ /negociacion-comercial.html [R=301,L]
+</IfModule>
 
-  # Redirigir .html y raíz a URLs canónicas
-  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-  RewriteRule ^index\.html$ /enrique-saavedra [R=301,L]
-
-  RewriteCond %{THE_REQUEST} \s/+[\s?] [NC]
-  RewriteRule ^$ /enrique-saavedra [R=301,L]
-
-  RewriteCond %{THE_REQUEST} \s/asesoria-legal-empresas\.html[\s?] [NC]
-  RewriteRule ^asesoria-legal-empresas\.html$ /servicios/asesoria-legal-empresas [R=301,L]
-
-  RewriteCond %{THE_REQUEST} \s/contratacion-comercial\.html[\s?] [NC]
-  RewriteRule ^contratacion-comercial\.html$ /servicios/contratacion-comercial [R=301,L]
-
-  RewriteCond %{THE_REQUEST} \s/gestion-de-riesgos\.html[\s?] [NC]
-  RewriteRule ^gestion-de-riesgos\.html$ /servicios/gestion-de-riesgos [R=301,L]
-
-  RewriteCond %{THE_REQUEST} \s/negociacion-comercial\.html[\s?] [NC]
-  RewriteRule ^negociacion-comercial\.html$ /servicios/negociacion-comercial [R=301,L]
-
-  # Servir URLs limpias desde los archivos .html
-  RewriteRule ^enrique-saavedra/?$ index.html [L]
-  RewriteRule ^servicios/asesoria-legal-empresas/?$ asesoria-legal-empresas.html [L]
-  RewriteRule ^servicios/contratacion-comercial/?$ contratacion-comercial.html [L]
-  RewriteRule ^servicios/gestion-de-riesgos/?$ gestion-de-riesgos.html [L]
-  RewriteRule ^servicios/negociacion-comercial/?$ negociacion-comercial.html [L]
+# Favicon: MIME correcto (Google + navegadores)
+<IfModule mod_mime.c>
+  AddType image/x-icon .ico
+  AddType image/png .png
 </IfModule>
 
 # --- Compresión GZIP ---
@@ -62,6 +47,8 @@
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 year"
 
   ExpiresByType text/css "access plus 1 month"
