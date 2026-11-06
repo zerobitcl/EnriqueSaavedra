@@ -232,6 +232,7 @@
       }
 
       showStatus('success', 'Datos validados. Redirigiendo a WhatsApp…');
+      trackLead('whatsapp', 'formulario', payload.servicio);
 
       // Diferir navegación un frame — libera el hilo principal del submit
       requestAnimationFrame(function () {
@@ -246,10 +247,61 @@
     });
   }
 
+  function serviceLine() {
+    var path = window.location.pathname || '/';
+    var file = path.split('/').pop();
+    if (!file || file === 'index.html') return 'home';
+    return file.replace(/\.html$/, '');
+  }
+
+  function ctaLocation(el) {
+    if (el.closest('.wa-float')) return 'flotante';
+    if (el.closest('header')) return 'header';
+    if (el.closest('footer')) return 'footer';
+    var section = el.closest('section');
+    if (section && section.id) return section.id;
+    return 'cuerpo';
+  }
+
+  var lastLeadKey = '';
+  var lastLeadAt = 0;
+
+  function trackLead(method, location, label) {
+    if (typeof window.gtag !== 'function') return;
+    var key = method + '|' + location + '|' + (label || '');
+    var now = Date.now();
+    if (key === lastLeadKey && now - lastLeadAt < 800) return;
+    lastLeadKey = key;
+    lastLeadAt = now;
+
+    window.gtag('event', 'generate_lead', {
+      method: method,
+      cta_location: location,
+      service_line: serviceLine(),
+      cta_label: (label || '').slice(0, 80),
+      transport_type: 'beacon'
+    });
+  }
+
+  function initLeadTracking() {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      var method = '';
+      if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) method = 'whatsapp';
+      else if (href.indexOf('tel:') === 0) method = 'phone';
+      else return;
+      var label = (link.textContent || '').replace(/\s+/g, ' ').trim();
+      trackLead(method, ctaLocation(link), label);
+    }, true);
+  }
+
   function boot() {
     initYear();
     initNav();
     initHeaderScroll();
+    initLeadTracking();
     // Formulario en idle: no compite con LCP/FCP
     scheduleIdle(initContactForm);
   }
